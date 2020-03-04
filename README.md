@@ -1,4 +1,4 @@
-# Application for a Dehumidifier without Thinkering
+# Application for a Dehumidifier without Tinkering
 
 ## Motivation
 
