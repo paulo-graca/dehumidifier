@@ -2,7 +2,7 @@
 
 ## Motivation
 
-My motivation for this project came from my need to hack my dehumifier (Delonghi DNC65) and give me remote control. I started looking at [Dehumidifier automator project](https://hackaday.io/project/20898-dehumidifier-automator#menu-description) and soon I decided I didn't wanted to thinker my device like it was done with this project. 
+My motivation for this project came from my need to hack my dehumifier (Delonghi DNC65) and give me remote control. I started looking at [Dehumidifier automator project](https://hackaday.io/project/20898-dehumidifier-automator#menu-description) and soon I decided I didn't wanted to tinker my device like it was done with this project. 
 
 ## Overview
 
