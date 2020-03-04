@@ -1,0 +1,57 @@
+author: Paulo Graça
+description: Device firmware for Delonghi Dehumidifier
+version: 1.0
+platform: esp8266
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+tags:
+  - c
+
+sources:
+  - src
+
+filesystem:
+  - fs
+
+config_schema:
+  - ["device.id", "dehumidifier_??????"]
+  - ["pins", "o", {title: "Pin configuration"}]
+  #  (GPIO4 - D2 - Photoresitor on/off)
+  - ["pins.pw", "i", 4, {title: "Photoresitor status pin, active high"}]
+  #  (GPIO5 - D1, Photoresitor Error)
+  - ["pins.err", "i", 5, {title: "Photoresitor error pin, active high"}]
+  - ["pins.relay", "i", 12, {title: "Relay control pin, active high"}]
+  #  (GPIO14 - D5, Servo motor)
+  - ["pins.servo", "i", 14, {title: "Servo motor control pin, active high"}]
+
+  # Enable mDNS discovery and resolving
+  - ["dns_sd.enable", true]
+  - ["dns_sd.host_name", "dehumidifier-??????"]
+
+  # Wifi settings
+  - ["wifi.ap.ssid", "s", "dehumidifier_??????", {title: "SSID"}]
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/crontab
+  - origin: https://github.com/mongoose-os-libs/dns-sd
+  - origin: https://github.com/mongoose-os-libs/http-server
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-wifi
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-service-cron
+  - origin: https://github.com/mongoose-os-libs/pwm
+
+build_vars:
+  FLASH_SIZE: 2097152
+
+manifest_version: 2020-01-29
