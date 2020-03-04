@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014-2018 Cesanta Software Limited
+ * Copyright (c) 2020
  * All rights reserved
  *
  * Licensed under the Apache License, Version 2.0 (the ""License"");
